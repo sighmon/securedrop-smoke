@@ -12,7 +12,7 @@ MESSAGE="SecureDrop instance unavailable"
 
 #source pushmsg.sh   #provides pushmsg() function, reads $TITLE & $MSG
 #source slackmsg.sh   #provides slackmsg() function, reads $MSG
-source $(dirname $0)/mailmsg.sh  #provides mailmsg() function, reads $TITLE & $MSG
+source mailmsg.sh  #provides mailmsg() function, reads $TITLE & $MSG
 
 notify () {
   #pushmsg $1 $2
