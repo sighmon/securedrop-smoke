@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 ## Static Definitions
 
@@ -8,11 +8,11 @@ STRNG="<title>SecureDrop | Protecting Journalists and Sources</title>"
 # the heart of the notification message to send
 MESSAGE="SecureDrop instance unavailable"
 
-my_dir="$(dirname "$0")"
+#my_dir="$(dirname "$0")"
 
-#source "$my_dir/pushmsg.sh"   #provides pushmsg() function, reads $TITLE & $MSG
-#source "$my_dir/slackmsg.sh"   #provides slackmsg() function, reads $MSG
-source "$my_dir/mailmsg.sh"  #provides mailmsg() function, reads $TITLE & $MSG
+#source pushmsg.sh   #provides pushmsg() function, reads $TITLE & $MSG
+#source slackmsg.sh   #provides slackmsg() function, reads $MSG
+source mailmsg.sh  #provides mailmsg() function, reads $TITLE & $MSG
 
 notify () {
   #pushmsg $1 $2
