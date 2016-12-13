@@ -1,4 +1,4 @@
-#! /bin/zsh
+#! /bin/sh
 
 ## Static Definitions
 
@@ -8,12 +8,16 @@ STRNG="<title>SecureDrop | Protecting Journalists and Sources</title>"
 # the heart of the notification message to send
 MESSAGE="SecureDrop instance unavailable"
 
-#source pushmsg.sh   #provides pushmsg() function, reads $TITLE & $MSG
-source slackmsg.sh   #provides slackmsg() function, reads $MSG
+my_dir="$(dirname "$0")"
+
+#source "$my_dir/pushmsg.sh"   #provides pushmsg() function, reads $TITLE & $MSG
+#source "$my_dir/slackmsg.sh"   #provides slackmsg() function, reads $MSG
+source "$my_dir/mailmsg.sh"  #provides mailmsg() function, reads $TITLE & $MSG
 
 notify () {
-  pushmsg $1 $2
-  slackmsg $1
+  #pushmsg $1 $2
+  #slackmsg $1
+  mailmsg $1 $2
   }
 
 ## Configure the Onion address for the SecureDrop instance we're checking
@@ -51,14 +55,16 @@ MSG="${MESSAGE} once at $(date --rfc-3339=seconds)."
 PUSH=no
 check
 
-sleep 200
+#sleep 200
+sleep 5 # 5 seconds for testing
 
 TITLE="SecureDrop down!"
 MSG="${MESSAGE} twice over five minutes at $(date --rfc-3339=seconds)."
 PUSH=no
 check
 
-sleep 1000
+#sleep 1000
+sleep 5 # 5 seconds for testing
 
 TITLE="SecureDrop definitely down?"
 MSG="${MESSAGE} for twenty minutes at $(date --rfc-3339=seconds)."
