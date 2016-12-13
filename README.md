@@ -12,7 +12,9 @@ Clone this repo
 Step two
 --------
 
-Create a file called `private/pushover-creds.sh` and set the `$APPKEY` and `$USRKEY` variables with the ones you'd like to use.
+Create a file called `private/pushover-creds.sh` and set the `$APPKEY` and `$USRKEY` variables with the ones you'd like to use for push notifications.
+
+Create a file called `private/email-address.sh` and set the `$EMAIL` variable to the email address you'd like notifications sent to.
 
 Step three
 ----------

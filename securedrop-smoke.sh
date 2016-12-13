@@ -55,16 +55,16 @@ MSG="${MESSAGE} once at $(date --rfc-3339=seconds)."
 PUSH=no
 check
 
-#sleep 200
-sleep 5 # 5 seconds for testing
+sleep 200
+#sleep 5 # 5 seconds for testing
 
 TITLE="SecureDrop down!"
 MSG="${MESSAGE} twice over five minutes at $(date --rfc-3339=seconds)."
 PUSH=no
 check
 
-#sleep 1000
-sleep 5 # 5 seconds for testing
+sleep 1000
+#sleep 5 # 5 seconds for testing
 
 TITLE="SecureDrop definitely down?"
 MSG="${MESSAGE} for twenty minutes at $(date --rfc-3339=seconds)."
